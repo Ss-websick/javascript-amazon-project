@@ -24,7 +24,7 @@
    
    Modules provides better way to organize our code 
    */
-import {cart} from '../data/cart.js';
+import {cart, addToCart} from '../data/cart.js';
 
 import {products} from '../data/products.js';
 
@@ -101,37 +101,26 @@ document.querySelector('.js-products-grid').innerHTML = productsHTML;
  -> data-product-image="${product.image}"
  -> data-product-price="${product.priceCents}" 
  */
+ function updateCartQuantity() {
+  let cartQuantity = 0;
+
+    cart.forEach((cartItem) => {
+      cartQuantity += cartItem.quantity;
+    });
+
+    document.querySelector('.js-cart-quantity')
+      .innerHTML = cartQuantity;
+ }
+
 document.querySelectorAll('.js-add-to-cart')
  .forEach((button) => {
   button.addEventListener('click', () => {
     // dataset property gives us all the data attributes that are attached to this button 
       const productId = button.dataset.productId;
       
-      let matchingItem;
+      addToCart(productId);
 
-      cart.forEach((item) => {
-        if (productId === item.productId) {
-          matchingItem = item;
-        }
-      });
-
-      if (matchingItem) {
-        matchingItem.quantity += 1;
-      } else {
-        cart.push({
-          productId: productId,
-          quantity: 1
-        });
-      }
-
-      let cartQuantity = 0;
-
-      cart.forEach((item) => {
-        cartQuantity += item.quantity;
-      });
-
-      document.querySelector('.js-cart-quantity')
-        .innerHTML = cartQuantity;
+      updateCartQuantity();
   });
  });
 
