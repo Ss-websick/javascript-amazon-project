@@ -57,8 +57,19 @@
     </div>
 
     <!-- Order matters REMEMBER -->
-    <script src="data/cart.js"></script>
     <script src="data/products.js"></script>
-    <script src="scripts/amazon.js "></script>
+    <script type="module" src="scripts/amazon.js "></script>
    </body>
-</html> 
+
+   <!-- Create a Module (basically a file) -->
+   <!--
+   1. Create a file
+   2. Don't load the file with <script></script>
+   Any variables we create inside the file, will be contained inside the file. 
+
+   Get a Variable Out of a File
+   1. type="module" attribute let's this file get variable out of the other files.
+   2. Export
+   3. Import
+   -->
+</html>

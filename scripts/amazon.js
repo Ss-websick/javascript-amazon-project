@@ -1,11 +1,30 @@
-// an array represents a list
+/*  
+ an array represents a list
 
-// .toFixed(2) will convert the number into a string and it will show two numbers after decimal point
+ .toFixed(2) will convert the number into a string and it will show two numbers after decimal point
 
-// Data Structure => Organizes the data
+ Data Structure => Organizes the data
 
-// Accumulator Pattern
-// Combining HTML Together
+ Accumulator Pattern
+ Combining HTML Together
+
+ We have to type which variable we wanna import ouside the file 
+ */
+/*  .. basically represent the folders outside the current folder
+ forward slash to go outside this outside */
+
+/* Put all the imports at the top of the file 
+   We need to use live server for using modules
+*/
+
+/* Benefits of using Modules 
+   1. Helps us avoid naming conflicts
+   2. Don't have to worry about order of files 
+   
+   Modules provides better way to organize our code 
+   */
+import {cart as myCart} from '../data/cart.js';
+
 let productsHTML = '';
 
 products.forEach((product) => {
