@@ -10,6 +10,7 @@
 
  We have to type which variable we wanna import ouside the file 
  */
+
 /*  .. basically represent the folders outside the current folder
  forward slash to go outside this outside */
 
@@ -23,7 +24,9 @@
    
    Modules provides better way to organize our code 
    */
-import {cart as myCart} from '../data/cart.js';
+import {cart} from '../data/cart.js';
+
+import {products} from '../data/products.js';
 
 let productsHTML = '';
 
