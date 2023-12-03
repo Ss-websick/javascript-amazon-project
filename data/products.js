@@ -657,5 +657,37 @@ export const products = [
       "apparel",
       "mens"
     ]
+  },
+  {
+    id: "id1",
+    image: "images/products/backpack.jpg",
+    name: "4-Pieces Backpack - Black",
+    rating: {
+      stars: 4.5,
+      count: 1040
+    },
+    priceCents: 1000,
+    keywords: [
+      "school bag",
+      "bags for men",
+      "quality bagpack",
+      "mens"
+    ]
+  },
+  {
+    id: "id2",
+    image: "images/products/umbrella.jpg",
+    name: "Umbrella - all colors",
+    rating: {
+      stars: 4,
+      count: 1900
+    },
+    priceCents: 500,
+    keywords: [
+      "umbrella",
+      "rainy season",
+      "colourfull umbrella",
+      "mens and womens"
+    ]
   }
 ];

@@ -1,3 +1,4 @@
+
 // Normalizing the data OR you can say deduplicating the data
 export let cart = JSON.parse(localStorage.getItem('cart'));
  
@@ -18,7 +19,7 @@ function saveToStorage() {
 
 
 // now this variable is available outside the cart.js file
-export function addToCart(productId) {
+export function addToCart(productId, selectedElementValue) {
   let matchingItem;
 
   cart.forEach((cartItem) => {
@@ -32,7 +33,7 @@ export function addToCart(productId) {
   } else {
     cart.push({
       productId: productId,
-      quantity: 1
+      quantity: selectedElementValue
     });
   }
 
