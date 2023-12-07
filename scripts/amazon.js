@@ -28,6 +28,8 @@ import {cart, addToCart} from '../data/cart.js';
 import {products} from '../data/products.js';
 import {formatCurrency} from './utils/money.js';
 
+cartQuantity();
+
 let productsHTML = '';
 
 products.forEach((product) => {
@@ -126,4 +128,14 @@ document.querySelectorAll('.js-add-to-cart')
 
   });
  });
+
+ function cartQuantity () {
+  let cartQuantity = 0;
+
+  cart.forEach((cartItem) => {
+    cartQuantity += cartItem.quantity;
+  });
+
+  document.querySelector('.js-cart-quantity').innerHTML = cartQuantity;
+ }
 

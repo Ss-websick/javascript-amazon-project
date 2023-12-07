@@ -2,6 +2,7 @@ import {cart, removeFromCart} from '../data/cart.js';
 import {products} from '../data/products.js';
 import {formatCurrency} from './utils/money.js'; // one dot means look into the current folder.
 
+cartQuantity();
 let cartSummaryHTML = '';
 
 cart.forEach((cartItem) => {
@@ -110,3 +111,13 @@ document.querySelectorAll('.js-delete-link')
       container.remove();
     });
   });
+
+  function cartQuantity () {
+    let cartQuantity = 0;
+
+    cart.forEach((cartItem) => {
+      cartQuantity += cartItem.quantity;
+    });
+
+    document.querySelector('.js-return-to-home-link').innerHTML = cartQuantity + ' items';
+  }
