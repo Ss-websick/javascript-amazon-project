@@ -9,10 +9,7 @@ import dayjs from 'https://unpkg.com/dayjs@1.11.10/esm/index.js';
 // Default export for only one thing to import
 
 import {deliveryOptions, getDeliveryOption} from '../../data/deliveryOptions.js';
-
-const today = dayjs();
-const deliveryDate = today.add(7, 'days');
-console.log(deliveryDate.format('dddd, MMMM D'));
+import { renderPaymentSummary } from './paymentSummary.js';
 
 cartQuantity();
 
@@ -133,10 +130,11 @@ document.querySelectorAll('.js-delete-link')
       // .dataset to access the data attribute
       const productId = link.dataset.productId;
       removeFromCart(productId);
-
       const container = document.querySelector(`.js-cart-item-container-${productId}`);
       // .remove() method will delete it from the page.
       container.remove();
+
+      renderPaymentSummary();
     });
   });
 
@@ -152,6 +150,7 @@ document.querySelectorAll('.js-delete-link')
         updateDeliveryOption(productId, deliveryOptionId);
 
         renderOrderSummary();
+        renderPaymentSummary();
       });
     });
 }
