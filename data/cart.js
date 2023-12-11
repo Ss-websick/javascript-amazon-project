@@ -71,4 +71,5 @@ export function removeFromCart(productId) {
     matchingItem.deliveryOptionId = deliveryOptionId;
 
     saveToStorage();
+    // why? because we are updating the cart.
   }

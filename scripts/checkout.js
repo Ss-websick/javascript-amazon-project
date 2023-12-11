@@ -15,6 +15,9 @@ const deliveryDate = today.add(7, 'days');
 console.log(deliveryDate.format('dddd, MMMM D'));
 
 cartQuantity();
+
+function renderOrderSummary () {
+
 let cartSummaryHTML = '';
 
 cart.forEach((cartItem) => {
@@ -107,6 +110,7 @@ function deliveryOptionsHTML(matchingProduct, cartItem) {
     ? 'FREE'
     : `$${formatCurrency(deliveryOption.priceCents)} -`;
 
+    // Below code for radio selector because we need a checked radio selector ny default
     const isChecked = deliveryOption.id === cartItem.deliveryOptionId;
     html += `
     <div class="delivery-option js-delivery-option"
@@ -148,16 +152,6 @@ document.querySelectorAll('.js-delete-link')
     });
   });
 
-  function cartQuantity () {
-    let cartQuantity = 0;
-
-    cart.forEach((cartItem) => {
-      cartQuantity += cartItem.quantity;
-    });
-
-    document.querySelector('.js-return-to-home-link').innerHTML = cartQuantity + ' items';
-  }
-
   document.querySelectorAll('.js-delivery-option')
     .forEach((element) => {
       element.addEventListener('click', () => {
@@ -168,5 +162,23 @@ document.querySelectorAll('.js-delete-link')
 
         const {productId, deliveryOptionId} = element.dataset;
         updateDeliveryOption(productId, deliveryOptionId);
+
+        renderOrderSummary();
       });
     });
+}
+
+function cartQuantity () {
+  let cartQuantity = 0;
+
+  cart.forEach((cartItem) => {
+    cartQuantity += cartItem.quantity;
+  });
+
+  document.querySelector('.js-return-to-home-link').innerHTML = cartQuantity + ' items';
+}
+
+renderOrderSummary();
+
+
+/* A function can call itself and this is called recursion */
