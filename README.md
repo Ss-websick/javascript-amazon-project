@@ -7,3 +7,5 @@ amazon https://shivam-upadhyay-tech.github.io/javascript-amazon-project/
 
 ## Mobile view
 ![w-1](https://github.com/shivam-upadhyay-tech/javascript-amazon-project/assets/144478276/13401e22-96c3-40c3-b1f8-0351a65c7267)
+
+![w-5](https://github.com/shivam-upadhyay-tech/javascript-amazon-project/assets/144478276/c04530a5-55b7-4828-a760-116a0f3499aa)
